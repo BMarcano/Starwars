@@ -1,0 +1,12 @@
+.container-details{
+    
+        display: grid;
+        grid-template-areas: "card card";
+        column-gap: 3rem;
+        row-gap: 0.5rem;
+        justify-content: center;
+        background-color: #212424;
+        height: 100vh;
+        align-content: center;
+    
+}
