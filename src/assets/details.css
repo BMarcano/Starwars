@@ -1,12 +1,17 @@
-.container-details{
-    
-        display: grid;
-        grid-template-areas: "card card";
-        column-gap: 3rem;
-        row-gap: 0.5rem;
-        justify-content: center;
+.container-details {
+        display: flex;
         background-color: #212424;
         height: 100vh;
-        align-content: center;
-    
+        justify-content: center;
+        align-items: center;
+}
+
+#navbar {
+        --navbar-height: 64px;
+        position: fixed;
+        height: var(--navbar-height);
+        background-color: var(--navbar-bg-color);
+        left: 0;
+        right: 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import "../assets/card.css"
+import "../../assets/card.css"
 
 const Card = (props) => {
     const Name = props.name.charAt(0).toUpperCase() + props.name.slice(1);

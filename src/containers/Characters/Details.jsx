@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import '../../assets/details.css'
-import CardDetails from "../../components/CardDetails";
-
+import CardDetails from "../../components/Cards/CardDetails";
 const Details = (props) => {
     const [name, setName] = useState('');
     const [gender, setGender] = useState('');
@@ -16,7 +15,6 @@ const Details = (props) => {
 
             try {
                 const data = await axios.get(`https://swapi.dev/api/people/1`);
-                console.log(data)
                 setName(data.data.name);
                 setGender(data.data.gender);
                 setBirthday(data.data.birth_year);

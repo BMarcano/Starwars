@@ -1,5 +1,18 @@
-.container{
-    background-color: black;
-    width: 300px;
-    flex-direction: column;
+.goBack {
+    border: transparent;
+    color: rgb(138, 136, 136);
+    text-align: center;
+    text-decoration: none;
+    font-size: 13px;
+    background-color: transparent;
+}
+
+.containerCard {
+    width: 200px;
+
+}
+.card-body-details{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;    
 }

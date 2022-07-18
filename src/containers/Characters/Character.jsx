@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Card from "../../components/Card";
+import Card from "../../components/Cards/Card";
 import "../../assets/character.css"
 import { useNavigate } from "react-router-dom";
 const Character = (props) => {
