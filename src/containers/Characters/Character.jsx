@@ -3,10 +3,13 @@ import axios from "axios";
 import Card from "../../components/Cards/Card";
 import "../../assets/character.css"
 import { useNavigate } from "react-router-dom";
-import Details from "./Details";
-const Character = (props) => {
-    const [Characters, setCharacters] = useState([]);
-    const Favorites = []
+import Menu from "../../components/Menu/Menu";
+const Character = () => {
+    const [characters, setCharacters] = useState([]);
+    const favorites = [3, 4, 9]
+    const [showFavorites, setShowFavorites] = useState(false)
+    const [star, setStar] = useState(false);
+
     let navigate = useNavigate();
 
     useEffect(() => {
@@ -23,29 +26,56 @@ const Character = (props) => {
     }, []);
 
     const handleDetail = (id) => {
-        navigate(`/Details`, { id });
+        navigate(`/Details`, { state: { id } });
     };
-    const handleFavorite = () =>{
-        Favorites.push(Characters.data)
+    const handleFavorite = (id) => {
+        if ((star == true)) {
+            favorites.push(id)
+        } else {
+            return false
+        }
     }
-    console.log(Favorites)
+    const toggleStar = () => {
+        setStar(!star)
+        handleFavorite();
+    }
+    const toggleFavorites = () => {
+        setShowFavorites(!showFavorites)
+    }
+    const shouldShow = (id) => {
+        if ((showFavorites && favorites.includes(id)) || !showFavorites) {
+            return true
+        } else {
+            return false
+        }
+    }
+    console.log(favorites)
     return (
+        <>
+            <div >
+                <Menu
+                    ShowFavorites={toggleFavorites}
+                />
+            </div>
+            <div className="cards-container">
 
-        <div className="cards-container">
-            {Characters.map((character, id) => (
-                <>
-                    <Card
-                        handleFavorite = {handleFavorite}
-                        id = {id}
-                        name={character.name}
-                        gender={character.gender}
-                        birthday={character.birth_year}
-                        handleDetail={handleDetail}
-                    />
+                {characters.map((character, id) => (
+                    <>
 
-                </>
-            ))}
-        </div>
+                        {shouldShow(id) &&
+                            <Card
+                                showStar={toggleStar}
+                                id={id}
+                                name={character.name}
+                                gender={character.gender}
+                                birthday={character.birth_year}
+                                handleDetail={handleDetail}
+                            />
+                        }
+                    </>
+                ))}
+            </div>
+        </>
     )
 }
 export default Character;
