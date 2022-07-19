@@ -14,7 +14,7 @@ const CardDetails = (props) => {
             <div className="card-body-details">
                 <p>{gender} </p>
                 <p>Birth date: {props.birthdate}</p>
-                {/* <p>Amount of films: {props.films}</p> */}
+                {<p>Amount of films: {props.films}</p> }
                 <p>Height: {props.height} | Mass: {props.mass}</p>
             </div>
         </div>

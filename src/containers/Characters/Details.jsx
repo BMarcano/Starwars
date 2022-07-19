@@ -10,6 +10,7 @@ const Details = (props) => {
     const [height, setHeight] = useState(0);
     const [mass, setMass] = useState(0);
 
+
     useEffect(() => {
         const getCharacter = async () => {
 
@@ -18,7 +19,7 @@ const Details = (props) => {
                 setName(data.data.name);
                 setGender(data.data.gender);
                 setBirthday(data.data.birth_year);
-                setFilms(data.data.films);
+                setFilms(data.data.films.length);
                 setHeight(data.data.height);
                 setMass(data.data.mass);
             } catch (error) {
@@ -28,6 +29,7 @@ const Details = (props) => {
         getCharacter();
 
     }, []);
+  
     return (
         <div className="container-details">
             <CardDetails 
