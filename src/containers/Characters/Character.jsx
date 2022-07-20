@@ -19,7 +19,7 @@ const Character = () => {
                 const data = await axios.get('https://swapi.dev/api/people/');
                 setCharacters(data.data.results);
             } catch (error) {
-                console.log(error)
+                return error
             }
         };
         getCharacter();
@@ -37,7 +37,6 @@ const Character = () => {
         }  
 
     }
-    console.log(favorites)
 
     const toggleStar = (id) => {
         setStar(star)

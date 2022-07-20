@@ -25,7 +25,7 @@ const Details = () => {
                 setHeight(data.data.height);
                 setMass(data.data.mass);
             } catch (error) {
-                console.log(error)
+                return error
             }
         };
         getCharacter();
