@@ -1,12 +1,14 @@
 import React from "react";
 import "../../assets/cardDetails.css"
 import { useNavigate } from "react-router-dom";
-
+import Menu from "../Menu/Menu";
 const CardDetails = (props) => {
     const gender = props.gender.charAt(0).toUpperCase() + props.gender.slice(1);
     const navigate = useNavigate();
     return (
+        
         <div className="containerCard">
+
             <button className="goBack" onClick={() => navigate(-1)}> Volver al listado </button>
             <div>
                 <h1>{props.name}</h1>

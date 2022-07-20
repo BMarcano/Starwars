@@ -6,17 +6,22 @@ const Card = (props) => {
     const gender = props.gender.charAt(0).toUpperCase() + props.gender.slice(1);
 
     return (
-        <>        
-        <div className="container" onClick={()=>props.handleDetail(props.id+1)}>
-            <div>
-                <h1>{Name}</h1>
+        <>
+            <div className="star">
+                <button className="star" onClick={() => props.showStar(props.id)}>⭐</button>
             </div>
-            <div className="card-body">
-                <p>{gender} |</p>
-                <p>Birth date: {props.birthday}</p>
+            <div className="container" onClick={() => props.handleDetail(props.id + 1)}>
+                <div>
+                    <h1>{Name}</h1>
+                </div>
+                <div className="card-body">
+                    <p>{gender} |</p>
+                    <p>Birth date: {props.birthday}</p>
+                    
+                </div>
+                
             </div>
-        
-        </div>
+
         </>
     )
 }

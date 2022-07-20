@@ -1,10 +1,9 @@
 import React from 'react'
 import "../../assets/menu.css"
-const Menu = (props) => {
+const Menu = () => {
     return (
         <div className='navbar'>
             <header>Star wars Characters</header>
-            <button className="btn" onClick={() => props.ShowFavorites()}>Filtrar por favoritos</button>
 
         </div>
     )

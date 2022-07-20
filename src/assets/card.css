@@ -19,7 +19,17 @@ p {
 }
 
 .card-body  {
-    display: flex;
+    
+    display: grid;
     justify-content: flex-start;
+    height: 10px;
+    grid-template-areas: "card card";
+    row-gap: 0.5rem;
+}
+.star{
+    background-color: transparent;
+    width: 50px;
+    border: none;
+    margin-right: -30px;
 
 }

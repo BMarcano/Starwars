@@ -1,17 +1,8 @@
 .container-details {
         display: flex;
-        background-color: #212424;
+        background-color: #1a1919;
         height: 100vh;
         justify-content: center;
         align-items: center;
 }
 
-#navbar {
-        --navbar-height: 64px;
-        position: fixed;
-        height: var(--navbar-height);
-        background-color: var(--navbar-bg-color);
-        left: 0;
-        right: 0;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-}
